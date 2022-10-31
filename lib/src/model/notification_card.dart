@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class NotificationCard {
-  final DateTime date;
+  final String date;
   final Widget leading;
   final String title;
   final String subtitle;

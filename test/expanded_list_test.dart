@@ -32,8 +32,7 @@ void main() {
     ));
 
     final Finder expandedList = find.byKey(
-          UniqueKey(),
-
+      ValueKey('ExpandedList'),
     );
 
     expect(expandedList, findsOneWidget);

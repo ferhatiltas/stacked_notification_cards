@@ -26,7 +26,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   List<NotificationCard> _listOfNotification = [
     NotificationCard(
-      date: DateTime.now(),
+      date: DateTime.now().toString(),
       leading: Icon(
         Icons.account_circle,
         size: 48,
@@ -37,7 +37,7 @@ class _MyHomePageState extends State<MyHomePage> {
     NotificationCard(
       date: DateTime.now().subtract(
         const Duration(minutes: 4),
-      ),
+      ).toString(),
       leading: Icon(
         Icons.account_circle,
         size: 48,
@@ -48,7 +48,7 @@ class _MyHomePageState extends State<MyHomePage> {
     NotificationCard(
       date: DateTime.now().subtract(
         const Duration(minutes: 10),
-      ),
+      ).toString(),
       leading: Icon(
         Icons.account_circle,
         size: 48,
@@ -59,7 +59,7 @@ class _MyHomePageState extends State<MyHomePage> {
     NotificationCard(
       date: DateTime.now().subtract(
         const Duration(minutes: 30),
-      ),
+      ).toString(),
       leading: Icon(
         Icons.account_circle,
         size: 48,
@@ -70,7 +70,7 @@ class _MyHomePageState extends State<MyHomePage> {
     NotificationCard(
       date: DateTime.now().subtract(
         const Duration(minutes: 44),
-      ),
+      ).toString(),
       leading: Icon(
         Icons.account_circle,
         size: 48,

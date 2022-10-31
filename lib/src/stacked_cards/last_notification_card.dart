@@ -80,7 +80,7 @@ class LastNotificationCard extends StatelessWidget {
                         ),
                       ),
                       Text(
-                        'Today ${DateFormat('h:mm a').format(notification.date)}',
+                        notification.date,
                         style: kCardTopTextStyle,
                       )
                     ],
