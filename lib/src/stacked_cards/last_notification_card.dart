@@ -40,13 +40,13 @@ class LastNotificationCard extends StatelessWidget {
     return Visibility(
       visible: totalCount > 1 && controller.value <= 0.4,
       child: GestureDetector(
-        key: ValueKey('onTapExpand'),
+        key: UniqueKey(),
         onTap: () {
           Slidable.of(context)?.close();
           controller.forward();
         },
         child: Container(
-          key: ValueKey('LastNotificationCard'),
+          key: UniqueKey(),
           margin: EdgeInsets.symmetric(horizontal: padding),
           height: height,
           decoration: BoxDecoration(

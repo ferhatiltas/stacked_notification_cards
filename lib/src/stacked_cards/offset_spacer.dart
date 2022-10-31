@@ -40,7 +40,7 @@ class OffsetSpacer extends StatelessWidget {
       visible: controller.value <= 0.8,
       child: Container(
         margin: EdgeInsets.symmetric(horizontal: padding),
-        key: ValueKey('SpacerSizedBox'),
+        key: UniqueKey(),
         height: Tween<double>(
           begin: _getInitialHeight(),
           end: notificationCount * (height + spacing),

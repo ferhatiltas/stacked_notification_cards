@@ -12,12 +12,14 @@ void main() {
     ));
 
     final Finder expandedList = find.byKey(
-      ValueKey('ExpandedList'),
+            UniqueKey(),
+
     );
     expect(expandedList, findsNothing);
 
     await tester.tap(find.byKey(
-      ValueKey('onTapExpand'),
+             UniqueKey(),
+
     ));
     await tester.pumpAndSettle();
     expect(expandedList, findsOneWidget);
@@ -30,7 +32,8 @@ void main() {
     ));
 
     final Finder expandedList = find.byKey(
-      ValueKey('ExpandedList'),
+          UniqueKey(),
+
     );
 
     expect(expandedList, findsOneWidget);

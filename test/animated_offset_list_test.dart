@@ -11,12 +11,13 @@ void main() {
     ));
 
     final Finder animatedOffsetList = find.byKey(
-      ValueKey('AnimatedOffsetList'),
+       UniqueKey(),
     );
     expect(animatedOffsetList, findsOneWidget);
 
     await tester.tap(find.byKey(
-     ValueKey('onTapExpand'),
+           UniqueKey(),
+
     ));
     await tester.pumpAndSettle();
     expect(animatedOffsetList, findsNothing);
@@ -29,7 +30,8 @@ void main() {
     ));
 
     final Finder animatedOffsetList = find.byKey(
-      ValueKey('AnimatedOffsetList'),
+            UniqueKey(),
+
     );
     expect(animatedOffsetList, findsNothing);
   });

@@ -94,10 +94,10 @@ class _BuildStackedNotificationState extends State<BuildStackedNotification>
     return AnimatedBuilder(
       animation: _animationController,
       builder: (_, __) => Column(
-        key: ValueKey('NotificationList'),
+         key: UniqueKey(),
         children: [
           StackedNotificationActions(
-            key: ValueKey('Header'),
+             key: UniqueKey(),
             controller: _animationController,
             spacing: spacing,
             padding: padding,
@@ -113,7 +113,7 @@ class _BuildStackedNotificationState extends State<BuildStackedNotification>
             clear: clear,
             view: view,
             clearAllStacked: clearAllStacked,
-            key: ValueKey('CollapsedCards'),
+            key: UniqueKey(),
             notificationCardTitle: notificationCardTitle,
             controller: _animationController,
             notificationCards: notificationCards,

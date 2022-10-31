@@ -143,7 +143,7 @@ class AnimatedOffsetList extends StatelessWidget {
     return Visibility(
       visible: notificationCards.length > 1 && controller.value <= 0.8,
       child: Stack(
-        key: ValueKey('AnimatedOffsetList'),
+         key: UniqueKey(),
         children: [
           ...notificationCards.map(
             (notification) {

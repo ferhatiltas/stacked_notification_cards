@@ -103,16 +103,18 @@ class ExpandedList extends StatelessWidget {
     final reversedList = List.of(notificationCards);
     reversedList.sort((a, b) => b.date.compareTo(a.date));
     return Visibility(
+       key: UniqueKey(),
       visible: _getListVisibility(reversedList.length),
       child: SlidableNotificationListener(
+         key: UniqueKey(),
         child: Column(
-          key: ValueKey('ExpandedList'),
+          key: UniqueKey(),
           children: [
             ...reversedList.map(
               (notification) {
                 final index = reversedList.indexOf(notification);
                 return BuildWithAnimation(
-                  key: ValueKey(notification.date),
+                   key: UniqueKey(),
                   // slidKey: ValueKey(notification.dateTime),
                   onTapView: onTapViewCallback,
                   view: view,
@@ -209,7 +211,7 @@ class _BuildWithAnimationState extends State<BuildWithAnimation> with SingleTick
   @override
   Widget build(BuildContext context) {
     return AnimatedBuilder(
-      key: ValueKey('BuildWithAnimation'),
+       key: UniqueKey(),
       animation: _animationController,
       builder: (_, __) => Opacity(
         opacity: Tween<double>(begin: 1.0, end: 0.0).animate(_animationController).value,

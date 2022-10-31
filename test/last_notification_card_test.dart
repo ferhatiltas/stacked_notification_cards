@@ -11,12 +11,14 @@ void main() {
     ));
 
     final Finder lastNotificationCard = find.byKey(
-      ValueKey('LastNotificationCard'),
+           UniqueKey(),
+
     );
     expect(lastNotificationCard, findsOneWidget);
 
     await tester.tap(find.byKey(
-      ValueKey('onTapExpand'),
+          UniqueKey(),
+
     ));
     await tester.pumpAndSettle();
     expect(lastNotificationCard, findsNothing);
@@ -29,7 +31,8 @@ void main() {
     ));
 
     final Finder lastNotificationCard = find.byKey(
-      ValueKey('LastNotificationCard'),
+            UniqueKey(),
+
     );
   
     expect(lastNotificationCard, findsNothing);

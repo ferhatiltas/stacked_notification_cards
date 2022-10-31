@@ -96,7 +96,7 @@ class StackedNotificationCards extends StatelessWidget {
   Widget build(BuildContext context) {
     if (notificationCards.length > 0) {
       return BuildStackedNotification(
-        key: ValueKey('BuildStackedNotification'),
+       key: UniqueKey(),
         notificationCards: notificationCards,
         tileColor: cardColor,
         cornerRadius: cardCornerRadius,
@@ -118,7 +118,7 @@ class StackedNotificationCards extends StatelessWidget {
       );
     } else {
       return SizedBox.shrink(
-        key: ValueKey('EmptySizedBox'),
+     key: UniqueKey(),
       );
     }
   }

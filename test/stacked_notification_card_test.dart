@@ -19,47 +19,32 @@ void main() {
       list: [],
     ));
 
-    expect(
-        tester
-            .widget<StackedNotificationCards>(
-                find.byType(StackedNotificationCards))
-            .cardsSpacing,
-        10);
+    expect(tester.widget<StackedNotificationCards>(find.byType(StackedNotificationCards)).cardsSpacing, 10);
 
-    expect(
-        tester
-            .widget<StackedNotificationCards>(
-                find.byType(StackedNotificationCards))
-            .cardCornerRadius,
-        8);
+    expect(tester.widget<StackedNotificationCards>(find.byType(StackedNotificationCards)).cardCornerRadius, 8);
 
-    expect(
-        tester
-            .widget<StackedNotificationCards>(
-                find.byType(StackedNotificationCards))
-            .padding,
-        0);
+    expect(tester.widget<StackedNotificationCards>(find.byType(StackedNotificationCards)).padding, 0);
   });
 
-  testWidgets('Expecting sizedBox when empty list',
-      (WidgetTester tester) async {
+  testWidgets('Expecting sizedBox when empty list', (WidgetTester tester) async {
     await tester.pumpWidget(BaseStructure(
       list: [],
     ));
 
-    final Finder sizedBox = find.byKey(ValueKey('EmptySizedBox'));
+    final Finder sizedBox = find.byKey(
+      UniqueKey(),
+    );
 
     expect(sizedBox, findsOneWidget);
   });
 
-  testWidgets('Expecting BuildStackedNotification when the list is not empty.',
-      (WidgetTester tester) async {
+  testWidgets('Expecting BuildStackedNotification when the list is not empty.', (WidgetTester tester) async {
     await tester.pumpWidget(BaseStructure(
       list: dataList1,
     ));
 
     final Finder buildStackedNotification = find.byKey(
-      ValueKey('BuildStackedNotification'),
+      UniqueKey(),
     );
 
     expect(buildStackedNotification, findsOneWidget);
@@ -77,7 +62,7 @@ void main() {
     ));
 
     final Finder notificationTile = find.byKey(
-      ValueKey('Header'),
+      UniqueKey(),
     );
 
     expect(notificationTile, findsOneWidget);
