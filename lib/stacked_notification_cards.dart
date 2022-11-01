@@ -69,7 +69,7 @@ class StackedNotificationCards extends StatelessWidget {
   /// Callback when tapped on cardClearButton widget after sliding card. This callback
   /// is used to clear the card. Also tigger a shirnk animation.
   final OnTapSlidButtonCallback onTapClearCallback;
-  final void Function()? onTapCard;
+  final OnTapCardCallback onTapCard;
   const StackedNotificationCards({
     Key? key,
     required this.notificationCards,

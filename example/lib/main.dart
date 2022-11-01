@@ -101,8 +101,8 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           children: [
             StackedNotificationCards(
-              onTapCard: () {
-                print('object');
+              onTapCard: (index) {
+                print(index);
               },
               boxShadow: [
                 BoxShadow(

@@ -30,7 +30,7 @@ class StackedCards extends StatelessWidget {
   final OnTapSlidButtonCallback onTapViewCallback;
   final OnTapSlidButtonCallback onTapClearCallback;
   final Widget clearAllStacked;
-  final void Function()? onTapCard;
+  final OnTapCardCallback onTapCard;
   StackedCards({
     Key? key,
     required this.controller,

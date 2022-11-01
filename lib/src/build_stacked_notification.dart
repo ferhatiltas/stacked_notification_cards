@@ -24,7 +24,7 @@ class BuildStackedNotification extends StatefulWidget {
   final Widget showLessAction;
   final Widget clearAllNotificationsAction;
   final Widget clearAllStacked;
-  final void Function()? onTapCard;
+  final OnTapCardCallback onTapCard;
   BuildStackedNotification({
     Key? key,
     required this.notificationCards,

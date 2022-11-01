@@ -6,6 +6,7 @@ import '../notification_tile/notification_tile.dart';
 import '../notification_tile/slide_button.dart';
 
 typedef void OnTapSlidButtonCallback(int index);
+typedef void OnTapCardCallback(int index);
 
 /// This widget is shown after animating [AnimatedOffsetList].
 /// Show all cards in a column, with the option to slide each card.
@@ -27,7 +28,7 @@ class ExpandedList extends StatelessWidget {
   final Widget clear;
   final OnTapSlidButtonCallback onTapViewCallback;
   final OnTapSlidButtonCallback onTapClearCallback;
-  final void Function()? onTapCard;
+  final OnTapCardCallback onTapCard;
   const ExpandedList({
     Key? key,
     required this.notificationCards,
@@ -104,10 +105,10 @@ class ExpandedList extends StatelessWidget {
     final reversedList = List.of(notificationCards);
     reversedList.sort((a, b) => b.date.compareTo(a.date));
     return Visibility(
-       key: UniqueKey(),
+      key: UniqueKey(),
       visible: _getListVisibility(reversedList.length),
       child: SlidableNotificationListener(
-         key: UniqueKey(),
+        key: UniqueKey(),
         child: Column(
           key: UniqueKey(),
           children: [
@@ -115,9 +116,11 @@ class ExpandedList extends StatelessWidget {
               (notification) {
                 final index = reversedList.indexOf(notification);
                 return GestureDetector(
-                  onTap: onTapCard ,
+                  onTap: () {
+                    onTapCard(index);
+                  },
                   child: BuildWithAnimation(
-                     key: UniqueKey(),
+                    key: UniqueKey(),
                     // slidKey: ValueKey(notification.dateTime),
                     onTapView: onTapViewCallback,
                     view: view,
@@ -215,7 +218,7 @@ class _BuildWithAnimationState extends State<BuildWithAnimation> with SingleTick
   @override
   Widget build(BuildContext context) {
     return AnimatedBuilder(
-       key: UniqueKey(),
+      key: UniqueKey(),
       animation: _animationController,
       builder: (_, __) => Opacity(
         opacity: Tween<double>(begin: 1.0, end: 0.0).animate(_animationController).value,
