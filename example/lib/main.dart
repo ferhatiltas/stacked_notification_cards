@@ -35,9 +35,11 @@ class _MyHomePageState extends State<MyHomePage> {
       subtitle: 'We believe in the power of mobile computing.',
     ),
     NotificationCard(
-      date: DateTime.now().subtract(
-        const Duration(minutes: 4),
-      ).toString(),
+      date: DateTime.now()
+          .subtract(
+            const Duration(minutes: 4),
+          )
+          .toString(),
       leading: Icon(
         Icons.account_circle,
         size: 48,
@@ -46,9 +48,11 @@ class _MyHomePageState extends State<MyHomePage> {
       subtitle: 'We believe in the power of mobile computing.',
     ),
     NotificationCard(
-      date: DateTime.now().subtract(
-        const Duration(minutes: 10),
-      ).toString(),
+      date: DateTime.now()
+          .subtract(
+            const Duration(minutes: 10),
+          )
+          .toString(),
       leading: Icon(
         Icons.account_circle,
         size: 48,
@@ -57,9 +61,11 @@ class _MyHomePageState extends State<MyHomePage> {
       subtitle: 'We believe in the power of mobile computing.',
     ),
     NotificationCard(
-      date: DateTime.now().subtract(
-        const Duration(minutes: 30),
-      ).toString(),
+      date: DateTime.now()
+          .subtract(
+            const Duration(minutes: 30),
+          )
+          .toString(),
       leading: Icon(
         Icons.account_circle,
         size: 48,
@@ -68,9 +74,11 @@ class _MyHomePageState extends State<MyHomePage> {
       subtitle: 'We believe in the power of mobile computing.',
     ),
     NotificationCard(
-      date: DateTime.now().subtract(
-        const Duration(minutes: 44),
-      ).toString(),
+      date: DateTime.now()
+          .subtract(
+            const Duration(minutes: 44),
+          )
+          .toString(),
       leading: Icon(
         Icons.account_circle,
         size: 48,
@@ -93,6 +101,9 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           children: [
             StackedNotificationCards(
+              onTapCard: () {
+                print('object');
+              },
               boxShadow: [
                 BoxShadow(
                   color: Colors.black.withOpacity(0.25),

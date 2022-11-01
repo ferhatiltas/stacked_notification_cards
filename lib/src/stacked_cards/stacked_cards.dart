@@ -30,10 +30,11 @@ class StackedCards extends StatelessWidget {
   final OnTapSlidButtonCallback onTapViewCallback;
   final OnTapSlidButtonCallback onTapClearCallback;
   final Widget clearAllStacked;
-
+  final void Function()? onTapCard;
   StackedCards({
     Key? key,
     required this.controller,
+    required this.onTapCard,
     required this.notificationCards,
     required this.containerHeight,
     required this.spacing,
@@ -140,6 +141,7 @@ class StackedCards extends StatelessWidget {
             padding: padding,
           ),
           ExpandedList(
+            onTapCard:onTapCard ,
             notificationCardTitle: notificationCardTitle,
             controller: controller,
             containerHeight: containerHeight,

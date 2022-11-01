@@ -24,10 +24,11 @@ class BuildStackedNotification extends StatefulWidget {
   final Widget showLessAction;
   final Widget clearAllNotificationsAction;
   final Widget clearAllStacked;
-
+  final void Function()? onTapCard;
   BuildStackedNotification({
     Key? key,
     required this.notificationCards,
+    required this.onTapCard,
     required this.tileColor,
     required this.cornerRadius,
     required this.spacing,
@@ -108,6 +109,7 @@ class _BuildStackedNotificationState extends State<BuildStackedNotification>
             clearAll: onTapClearAll,
           ),
           StackedCards(
+            onTapCard: widget.onTapCard,
             onTapClearCallback: onTapClearCallback,
             onTapViewCallback: onTapViewCallback,
             clear: clear,

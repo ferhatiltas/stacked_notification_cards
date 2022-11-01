@@ -27,10 +27,11 @@ class ExpandedList extends StatelessWidget {
   final Widget clear;
   final OnTapSlidButtonCallback onTapViewCallback;
   final OnTapSlidButtonCallback onTapClearCallback;
-
+  final void Function()? onTapCard;
   const ExpandedList({
     Key? key,
     required this.notificationCards,
+    required this.onTapCard,
     required this.controller,
     required this.containerHeight,
     required this.initialSpacing,
@@ -113,38 +114,41 @@ class ExpandedList extends StatelessWidget {
             ...reversedList.map(
               (notification) {
                 final index = reversedList.indexOf(notification);
-                return BuildWithAnimation(
-                   key: UniqueKey(),
-                  // slidKey: ValueKey(notification.dateTime),
-                  onTapView: onTapViewCallback,
-                  view: view,
-                  clear: clear,
-                  containerHeight: containerHeight,
-                  cornerRadius: cornerRadius,
-                  onTapClear: onTapClearCallback,
-                  spacing: _getSpacing(index, spacing),
-                  boxShadow: boxShadow,
-                  index: index,
-                  tileColor: tileColor,
-                  endPadding: _getEndPadding(index),
-                  tilePadding: tilePadding,
-                  child: NotificationTile(
-                    cardTitle: notificationCardTitle,
-                    date: notification.date,
-                    title: notification.title,
-                    subtitle: notification.subtitle,
-                    spacing: spacing,
-                    height: containerHeight,
-                    color: tileColor,
+                return GestureDetector(
+                  onTap: onTapCard ,
+                  child: BuildWithAnimation(
+                     key: UniqueKey(),
+                    // slidKey: ValueKey(notification.dateTime),
+                    onTapView: onTapViewCallback,
+                    view: view,
+                    clear: clear,
+                    containerHeight: containerHeight,
                     cornerRadius: cornerRadius,
-                    titleTextStyle: titleTextStyle,
-                    subtitleTextStyle: subtitleTextStyle,
+                    onTapClear: onTapClearCallback,
+                    spacing: _getSpacing(index, spacing),
                     boxShadow: boxShadow,
-                    padding: EdgeInsets.fromLTRB(
-                      tilePadding,
-                      _topPadding(index),
-                      tilePadding,
-                      _getEndPadding(index),
+                    index: index,
+                    tileColor: tileColor,
+                    endPadding: _getEndPadding(index),
+                    tilePadding: tilePadding,
+                    child: NotificationTile(
+                      cardTitle: notificationCardTitle,
+                      date: notification.date,
+                      title: notification.title,
+                      subtitle: notification.subtitle,
+                      spacing: spacing,
+                      height: containerHeight,
+                      color: tileColor,
+                      cornerRadius: cornerRadius,
+                      titleTextStyle: titleTextStyle,
+                      subtitleTextStyle: subtitleTextStyle,
+                      boxShadow: boxShadow,
+                      padding: EdgeInsets.fromLTRB(
+                        tilePadding,
+                        _topPadding(index),
+                        tilePadding,
+                        _getEndPadding(index),
+                      ),
                     ),
                   ),
                 );

@@ -12,6 +12,7 @@ class BaseStructure extends StatelessWidget {
     return MaterialApp(
         home: Scaffold(
       body: StackedNotificationCards(
+        onTapCard: (){},
         cardColor: Colors.white,
         notificationCards: list,
         notificationCardTitle: 'Message',
