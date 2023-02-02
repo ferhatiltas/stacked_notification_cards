@@ -90,7 +90,7 @@ class _BuildStackedNotificationState extends State<BuildStackedNotification>
     final clearAllStacked = widget.clearAllStacked;
 
     /// needs to sort to show the list in ascending date order
-    notificationCards.sort((a, b) => a.date.compareTo(b.date));
+    // notificationCards.sort((a, b) => a.date.compareTo(b.date));
 
     return AnimatedBuilder(
       animation: _animationController,

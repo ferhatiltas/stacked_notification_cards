@@ -103,7 +103,7 @@ class ExpandedList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final reversedList = List.of(notificationCards);
-    reversedList.sort((a, b) => b.date.compareTo(a.date));
+    // reversedList.sort((a, b) => b.date.compareTo(a.date));
     return Visibility(
       key: UniqueKey(),
       visible: _getListVisibility(reversedList.length),
